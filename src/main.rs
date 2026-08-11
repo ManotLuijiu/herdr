@@ -605,7 +605,7 @@ fn main() -> io::Result<()> {
     }
 
     if args.iter().any(|a| a == "--help" || a == "-h") {
-        println!("herdr — terminal workspace manager for AI coding agents");
+        println!("herdr (moocoding fork) — terminal workspace manager for AI coding agents");
         println!();
         println!("Usage: herdr [options]");
         println!("       herdr --session <name> [options]");

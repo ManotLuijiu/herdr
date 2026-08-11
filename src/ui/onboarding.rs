@@ -56,7 +56,7 @@ fn render_onboarding_welcome(app: &AppState, frame: &mut Frame, area: Rect) {
         header_rows[0],
     );
     frame.render_widget(
-        Paragraph::new("  terminal workspace manager for coding agents")
+        Paragraph::new("  herdr (moocoding fork) — terminal workspace manager for coding agents")
             .style(Style::default().fg(app.palette.overlay0)),
         header_rows[1],
     );
