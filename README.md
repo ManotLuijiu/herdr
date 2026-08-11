@@ -6,6 +6,9 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ManotLuijiu/herdr/actions/workflows/ci-build.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/ManotLuijiu/herdr/ci-build.yml?branch=develop&label=develop%20build&labelColor=333333&color=666666" alt="develop build status" />
+  </a>
   <a href="https://herdr.dev">herdr.dev</a> · <a href="#install">install</a> · <a href="https://herdr.dev/docs/quick-start/">quick start</a> · <a href="https://herdr.dev/docs/">docs</a>
 </p>
 
