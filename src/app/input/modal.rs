@@ -846,6 +846,25 @@ pub(super) fn apply_context_menu_action(
         (ContextMenuKind::Pane { pane_id, .. }, Some("Rename pane")) => {
             open_rename_pane(state, pane_id);
         }
+        (ContextMenuKind::Pane { pane_id, .. }, Some("Copy")) => {
+            // Copy selection to clipboard
+            state.copy_selection(&terminal_runtimes);
+            state.mode = Mode::Terminal;
+        }
+        (ContextMenuKind::Pane { pane_id, ws_idx, .. }, Some("Paste")) => {
+            // Read from system clipboard and paste to pane
+            use crate::platform::read_clipboard_text;
+            if let Some(text) = read_clipboard_text() {
+                if let Some(runtime) = state.runtime_for_pane_in_workspace(
+                    terminal_runtimes,
+                    ws_idx,
+                    pane_id,
+                ) {
+                    let _ = runtime.try_send_paste(text);
+                }
+            }
+            state.mode = Mode::Terminal;
+        }
         (
             ContextMenuKind::Pane {
                 ws_idx, pane_id, ..
